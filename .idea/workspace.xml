@@ -4,18 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="102d3195-e07c-4dfa-baf1-cad9c5a1f129" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collections/hailey-voice/0/newest_clocks.json" beforeDir="false" afterPath="$PROJECT_DIR$/collections/hailey-voice/0/newest_clocks.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collections/hailey-voice/0/replica_state.json" beforeDir="false" afterPath="$PROJECT_DIR$/collections/hailey-voice/0/replica_state.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collections/hailey-voice/0/wal/first-index" beforeDir="false" afterPath="$PROJECT_DIR$/collections/hailey-voice/0/wal/first-index" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collections/hailey-voice/0/wal/open-1" beforeDir="false" afterPath="$PROJECT_DIR$/collections/hailey-voice/0/wal/open-1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collections/hailey-voice/0/wal/open-2" beforeDir="false" afterPath="$PROJECT_DIR$/collections/hailey-voice/0/wal/open-2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataset/Mental_Health_FAQ.csv" beforeDir="false" afterPath="$PROJECT_DIR$/dataset/Mental_Health_FAQ.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qdrant_dataloader.py" beforeDir="false" afterPath="$PROJECT_DIR$/qdrant_dataloader.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/raft_state.json" beforeDir="false" afterPath="$PROJECT_DIR$/raft_state.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-    </list>
+    <list default="true" id="102d3195-e07c-4dfa-baf1-cad9c5a1f129" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
