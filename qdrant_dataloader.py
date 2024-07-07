@@ -1,21 +1,19 @@
 from llama_index.vector_stores.qdrant import QdrantVectorStore
 from llama_index.core.node_parser import SentenceSplitter
 from llama_index.embeddings.openai import OpenAIEmbedding
-from llama_index.core import VectorStoreIndex, Document, StorageContext
-from llama_index.embeddings.fastembed import FastEmbedEmbedding
-from llama_index.core.settings import Settings
-
+from llama_index.core import VectorStoreIndex, Document
+from utils import get_vector_store
 import pandas as pd
+from datetime import datetime
 import qdrant_client
-from dotenv import load_dotenv
-load_dotenv('/home/sunilsamsonsuresh/Documents/Study/Github/Hailey-Voice-Assistant/.env')
+from dotenv import dotenv_values
 
+config = dotenv_values(".env")
 
-# embed_model = FastEmbedEmbedding(model_name="BAAI/bge-base-en-v1.5")
+api_key = config['OPENAI_API_KEY']
 
-#
-embed_model = OpenAIEmbedding(model_name="text-embedding-ada-002")
 csv_file = pd.read_csv("dataset/Mental_Health_FAQ.csv")
+csv_file = csv_file[:5]
 
 client = qdrant_client.QdrantClient(
         host="localhost",
@@ -32,7 +30,8 @@ def create_documents(csv_file):
         content = f"{row['Questions']} \n {row['Answers']}"
 
         metadata = {
-            "id": row['Question_ID']
+            "id": row['Question_ID'],
+            'datetime': datetime.now().isoformat()
         }
 
         doc = Document(
@@ -47,6 +46,7 @@ def create_documents(csv_file):
 
 def create_embeddings(documents):
 
+    embed_model = OpenAIEmbedding(model_name="text-embedding-ada-002", api_key=api_key)
 
     parser = SentenceSplitter()
     if documents:
@@ -65,7 +65,6 @@ def add_docs(client, csv_file, collection_name):
 
     documents = create_documents(csv_file)
     nodes = create_embeddings(documents)
-
 
     vector_store = QdrantVectorStore(client=client, collection_name=collection_name)
 
